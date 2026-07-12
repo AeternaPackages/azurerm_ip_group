@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.ip_groups : {
       for k2, v2 in coalesce(v1.ip_group_cidrs, {}) :
       "${k1}/${k2}" => merge(v2, {
-        ip_group_id = module.ip_groups.ip_groups["${k1}"].id
+        ip_group_id = module.ip_groups.ip_groups_id["${k1}"]
       })
     }
   ]...)
