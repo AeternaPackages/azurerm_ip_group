@@ -1,4 +1,9 @@
 # --- azurerm_ip_group ---
+output "ip_groups_id" {
+  description = "Map of id values across all ip_groups, keyed the same as var.ip_groups"
+  value       = module.ip_groups.ip_groups_id
+}
+
 output "ip_groups_cidrs" {
   description = "Map of cidrs values across all ip_groups, keyed the same as var.ip_groups"
   value       = module.ip_groups.ip_groups_cidrs
@@ -35,6 +40,11 @@ output "ip_groups_tags" {
 }
 
 # --- azurerm_ip_group_cidr ---
+output "ip_group_cidrs_id" {
+  description = "Map of id values across all ip_group_cidrs, keyed the same as var.ip_group_cidrs"
+  value       = module.ip_group_cidrs.ip_group_cidrs_id
+}
+
 output "ip_group_cidrs_cidr" {
   description = "Map of cidr values across all ip_group_cidrs, keyed the same as var.ip_group_cidrs"
   value       = module.ip_group_cidrs.ip_group_cidrs_cidr
