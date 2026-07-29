@@ -12,12 +12,12 @@ locals {
 }
 
 module "ip_groups" {
-  source    = "git::https://github.com/AeternaModules/azurerm_ip_group.git?ref=v4.81.0"
+  source    = "git::https://github.com/AeternaModules/azurerm_ip_group.git?ref=v5.0.0"
   ip_groups = local.ip_groups
 }
 
 module "ip_group_cidrs" {
-  source         = "git::https://github.com/AeternaModules/azurerm_ip_group_cidr.git?ref=v4.81.0"
+  source         = "git::https://github.com/AeternaModules/azurerm_ip_group_cidr.git?ref=v5.0.0"
   ip_group_cidrs = local.ip_group_cidrs
   depends_on     = [module.ip_groups]
 }
